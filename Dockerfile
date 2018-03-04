@@ -8,7 +8,7 @@ WORKDIR /opt/hue-emulator/
 RUN cd /tmp; git clone https://github.com/mariusmotea/diyHue.git
 RUN cd /tmp/diyHue/BridgeEmulator/; cp HueEmulator3.py coap-client-linux config.json /opt/hue-emulator/
 
-EXPOSE 8080
 EXPOSE 80
+EXPOSE 1900
 
 ENTRYPOINT ["/opt/hue-emulator/HueEmulator3.py"]
