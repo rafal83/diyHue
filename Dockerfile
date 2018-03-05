@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.10.0
+FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get -y install git curl nmap python3 python3-pip nano
 RUN pip3 install requests ws4py
