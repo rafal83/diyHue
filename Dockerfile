@@ -1,6 +1,5 @@
-FROM ubuntu:16.4
-RUN apt-get update
-RUN apt-get -y install git curl nmap python3 python3-pip nano
+FROM alpine:3.5
+RUN apk add --no-cache git curl nmap python3 python3-pip nano
 RUN pip3 install requests ws4py
 
 WORKDIR /opt/hue-emulator/
