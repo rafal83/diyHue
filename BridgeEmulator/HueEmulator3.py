@@ -92,7 +92,8 @@ def getIpAddress():
 bridge_config["config"]["ipaddress"] = getIpAddress()
 bridge_config["config"]["gateway"] = getIpAddress()
 bridge_config["config"]["mac"] = mac[0] + mac[1] + ":" + mac[2] + mac[3] + ":" + mac[4] + mac[5] + ":" + mac[6] + mac[7] + ":" + mac[8] + mac[9] + ":" + mac[10] + mac[11]
-bridge_config["config"]["bridgeid"] = (mac[:6] + 'FFFE' + mac[6:]).upper()
+if bridge_config["config"]["bridgeid"] == "":
+    bridge_config["config"]["bridgeid"] = (mac[:6] + 'FFFE' + mac[6:]).upper()
 
 def saveConfig(filename='/opt/hue-emulator/config.json'):
     with open(filename, 'w') as fp:
